@@ -4,7 +4,7 @@
     var array  = [];
     var array2 = [];
 
-    for (var i = 0; i <= 100000; i++) {
+    for (var i = 0; i <= 80000; i++) {
         var random = Math.random() * 10;
         array.push(random);
         array2.push(random);
