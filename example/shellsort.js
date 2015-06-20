@@ -1,16 +1,16 @@
 (function(){
     'use strict';
 
-    // var array  = ['C','B','Z','A','B','E'];
-    // var array2  = ['C','B','Z','A','B','E'];
-    // var array3  = ['C','B','Z','A','B','E'];
+    // var array   = ['M','E','R','G','E','S','O','R','T','E','X','A','M','P','L','E'];
+    // var array2  = ['M','E','R','G','E','S','O','R','T','E','X','A','M','P','L','E'];
+    // var array3  = ['M','E','R','G','E','S','O','R','T','E','X','A','M','P','L','E'];
     var array  = [];
     var array2 = [];
     var array3 = [];
 
      var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
-    for (var i = 0; i <= 1000000; i++) {
+    for (var i = 0; i <= 800000; i++) {
         var random = possible.charAt(Math.floor(Math.random() * possible.length));
         array.push(random);
         array2.push(random);
@@ -23,7 +23,7 @@
     var time = end - start;
 
     console.log(array);
-    var fSort = document.querySelector("#shellshort .native-sort");
+    var fSort = document.querySelector("#native-sort");
     fSort.textContent = time;
 
     var start = new Date().getTime();
@@ -35,13 +35,14 @@
     var fSort = document.querySelector("#shellshort .shellsort");
     fSort.textContent = time;
 
-    //   var mid = Math.round(array3.length);
-    // start = new Date().getTime();
-    // array3.merge(0,  mid , array3.length);
-    // array3.shellsort();
-    // end = new Date().getTime();
-    // var time2 = end - start;
-    // console.log(array3);
+    var start = new Date().getTime();
+    array3.sortTopDown();
+    var end = new Date().getTime();
+    var time = end - start;
+    console.log(array3);
+
+    var fSort = document.querySelector("#top-down .topdown");
+    fSort.textContent = time;
 
 
 })();
