@@ -9,11 +9,20 @@
         }
         while(h >= 1 ){
             for (var i = h; i < N; i++) {
-                for(var j = i; j >= h && this.less(this[j], this[j-h]) ; j -= h){
-                    this.exch(i, j-h);
+                for(var j = i; j >= h && this.less(this[j], this[j-h]) ; j = j-h){
+                    this.exch(j, j-h);
                 };
             };
             h = Math.round(h/3);
+        }
+    };
+
+    Array.prototype.insertsort = function() {
+        var N = this.length;
+        for(var i = 1; i < N; i++){
+            for(var j = i; j > 0 && this.less(this[j], this[j-1]); i--){
+                this.exch(j, j-1);
+            }
         }
     };
 
